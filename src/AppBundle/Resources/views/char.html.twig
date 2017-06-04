@@ -1,0 +1,37 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    {% for data in tables %}
+        <table>
+            <thead>
+                <tr>
+                    {% for cell in data[0] %}
+                        <th>{{ cell }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        {% for cell in row %}
+                            <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('table').DataTable({
+                stateSave: true,
+                paging: false
+            });
+        } );
+    </script>
+{% endblock %}
+

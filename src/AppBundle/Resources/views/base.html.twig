@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" type="text/css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    </head>
+    <body>
+        src & credits: <a href="http://rbnorway.org/t7-frame-data/">http://rbnorway.org/t7-frame-data/</a> &ndash;
+        last update: {{ meta.fetched|date }} -
+        <a href="#">github</a>
+        <hr>
+        {% for char in characters %}
+            <a href="/static/{{ char }}.html">{{ char }}</a> -
+        {% endfor %}
+        <hr>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
