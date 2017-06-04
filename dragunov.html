@@ -2,9 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" type="text/css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" type="text/css">
         <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css" type="text/css">
+        <script src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
     </head>
     <body>
         src & credits: <a href="http://rbnorway.org/t7-frame-data/">http://rbnorway.org/t7-frame-data/</a> &ndash;
@@ -3625,7 +3627,8 @@
         $(document).ready(function() {
             $('table').DataTable({
                 stateSave: true,
-                paging: false
+                paging: false,
+                fixedHeader: true
             });
         } );
     </script>
