@@ -32,7 +32,7 @@ class BuildCommand extends ContainerAwareCommand
         foreach($data as $char => $tables) {
             $output->writeln("Creating the view for $char");
             file_put_contents(
-                "$root/../static/$char.html",
+                "$root/../$char.html",
                 $this->getContainer()->get('twig')->render('@App/char.html.twig', [
                     'meta' => $meta,
                     'tables' => $tables,

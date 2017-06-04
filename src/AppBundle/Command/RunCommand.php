@@ -90,7 +90,7 @@ class RunCommand extends ContainerAwareCommand
 
             foreach ($tables as $table) {
                 $rows = $tables->filter('tr');
-                $tdata = & $data[$char][];
+                $tdata = & $data[strtolower($char)][];
                 foreach($rows as $row) {
                     $d = & $tdata[];
                     foreach((new Crawler($row))->filter('td') as $td) {

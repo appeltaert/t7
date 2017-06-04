@@ -12,7 +12,8 @@
         <a href="#">github</a>
         <hr>
         {% for char in characters %}
-            <a href="/static/{{ char }}.html">{{ char }}</a> -
+            <a href="/{{ char }}.html">{{ char }}</a>
+            {% if not loop.last %}-{% endif %}
         {% endfor %}
         <hr>
         {% block body %}{% endblock %}
